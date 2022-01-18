@@ -316,14 +316,16 @@ export default (body: any[], data: docsReq) => {
                 location: {
                     index: 1
                 },
-                text: 'Одеський національний морський університет, Україна\n\n'
+                //@ts-ignore
+                text: `${data.authors[0].position}, Україна\n\n`
             }           
         },
         {
             updateTextStyle: {
                 range: {
                     startIndex: 1,
-                    endIndex: ('Одеський національний морський університет, Україна').length + 1
+                    //@ts-ignore
+                    endIndex: (`${data.authors[0].position}, Україна`).length + 1
                 },
                 textStyle: {
                     fontSize: {
